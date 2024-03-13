@@ -1,11 +1,13 @@
-import argparse
+import argparse #argparse是用来处理命令行参数的工具，提供了一种方便的方式来定义用户应该如何指定/处理这些参数
 import time
 
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras.losses import SparseCategoricalCrossentropy
+from tensorflow import keras #keras是tf上的一个高级接口，用于构建和训练深度学习模型
+from tensorflow.keras.losses import SparseCategoricalCrossentropy #这是一个损失函数，常用于多分类问题，是交叉熵损失函数的一种（适用于真实标签是整数的情况，函数会将真实标签视为类别索引，并使用这个索引从预测的概率分布中选择一个概率）
+#例如，如果你有一个分类问题，类别有 3 类，那么你的真实标签可能是 0、1 或 2。你的模型会预测出一个概率分布，如 [0.1, 0.2, 0.7]，这表示模型认为样本属于第 0 类、第 1 类和第 2 类的概率分别是 0.1、0.2 和 0.7。
 import numpy as np
 
+#下面的包均为此目录下的程序
 import utils
 import loggingreporter
 import plot_figure2

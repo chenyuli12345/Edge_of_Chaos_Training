@@ -1,10 +1,10 @@
-import os
-import pickle
-from collections import OrderedDict
+import os #os模块提供了许多与操作系统交互的函数。例如可以使用os模块来读取环境变量、操作路径、创建或删除目录、获取当前工作目录等等。
+import pickle #pickle模块提供了一个简单的持久化功能。可以将对象以文件的形式存放在磁盘上。
+from collections import OrderedDict #OrderedDict是一个字典子类，它记住了元素的添加顺序并提供了一些额外的方法
 
 import numpy as np
-from numpy import linalg as LA
-from scipy.sparse.linalg import eigs
+from numpy import linalg as LA #numpy中的一个子模块，提供了线性代数的功能
+from scipy.sparse.linalg import eigs #该子模块提供了一些稀疏线性代数功能，eigs函数则用于计算一个稀疏矩阵的一些特征值和特征向量
 import tensorflow as tf
 from tensorflow import keras
 
@@ -18,8 +18,9 @@ class LoggingReporter(keras.callbacks.Callback):
         y_test: test label
     """
 
-    def __init__(self, args, x_train, y_train, x_test, y_test, *kargs, **kwargs):
+    def __init__(self, args, x_train, y_train, x_test, y_test, *kargs, **kwargs): #这个类包含的第一个方法__init__，这是一个特殊的方法，也就是这个类的构造函数，用于初始化新创建的对象，接受了几个参数，其中最后两个参数是可变数量的参数，可以接收任意数量和类型的参数
         super(LoggingReporter, self).__init__(*kargs, **kwargs)
+        #将传入的参数保存到类的实例变量中，以便在类的其他方法中使用
         self.args = args
         self.x_train = x_train
         self.y_train = y_train
