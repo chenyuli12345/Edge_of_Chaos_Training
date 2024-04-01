@@ -2,6 +2,9 @@ clear
 clc
 close all
 
+tic;%开始计时
+
+
 lb = [-inf, 0];
 x0 = [1, 1];
 num_bins = 100;
@@ -61,3 +64,8 @@ integrand2 = @(z) tanh((J0/beta).*u+(1/beta).*sqrt(q).*z).^2.*exp(-z.^2/2).*(1/s
 F(1) = integral(integrand1, -inf, inf) - u;
 F(2) = integral(integrand2, -inf, inf) - q;
 end
+
+
+elapsedTime = toc; %停止计时并获取时间
+
+fprintf('Elapsed time is %.6f seconds.\n', elapsedTime);
