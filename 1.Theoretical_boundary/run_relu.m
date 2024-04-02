@@ -2,6 +2,9 @@ clear
 clc
 close all
 
+tic;%开始计时
+
+
 lb = [-inf, 0];
 x0 = [0.1,0.1];
 num_bins = 100;
@@ -46,6 +49,24 @@ heatmap(J0s, flip(betas), flip(integrals2));
 title('\fontsize{16}Deviation of lhs of Eq.(3) from 1')
 
 save('data_100bins_relu.mat', 'integrals')
+
+
+
+
+
+elapsedTime = toc; %停止计时并获取时间
+
+fprintf('Elapsed time is %.6f seconds.\n', elapsedTime);
+
+
+
+
+
+
+
+
+
+
 
 function F = relu_integral(x)
 %
