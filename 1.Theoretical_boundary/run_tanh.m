@@ -54,6 +54,17 @@ title('Values of q')
 
 save('data_100bins_tanh.mat', 'integrals')
 
+
+
+
+elapsedTime = toc; %停止计时并获取时间
+
+fprintf('Elapsed time is %.6f seconds.\n', elapsedTime);
+
+
+
+
+
 function F = tanh_integral(x)
 %
 global J0 beta
@@ -66,6 +77,3 @@ F(2) = integral(integrand2, -inf, inf) - q;
 end
 
 
-elapsedTime = toc; %停止计时并获取时间
-
-fprintf('Elapsed time is %.6f seconds.\n', elapsedTime);
