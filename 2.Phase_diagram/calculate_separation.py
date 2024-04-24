@@ -28,11 +28,12 @@ def calculate_separation(args, num_iter, fname):
         results.append(result)
 
     results = np.array(results)
-
-    if not os.path.exists('rawdata/{}'.format(args.activation_func)):
-        os.makedirs('rawdata/{}'.format(args.activation_func))
-    with open(fname, 'wb') as f:
-        pickle.dump(results, f, protocol=pickle.HIGHEST_PROTOCOL)
+    
+    #将results保存到文件中，文件的路径名由传入的fname参数决定
+    if not os.path.exists('rawdata/{}'.format(args.activation_func)): #检查路径是否存在
+        os.makedirs('rawdata/{}'.format(args.activation_func)) #若不存在，则创建路径
+    with open(fname, 'wb') as f: #打开文件，文件名为传入的参数
+        pickle.dump(results, f, protocol=pickle.HIGHEST_PROTOCOL) 
 
 
 def set_weight(L, J, J0, beta):
