@@ -27,7 +27,7 @@ parser.add_argument('--activation-func', type=str, default='relu', help='activat
 #训练轮数，默认为4
 parser.add_argument('--epochs', default=4, type=int, metavar='N', help='number of total epochs to run, should > 3') #--epochs参数，类型为整数，默认值为4，描述信息为'number of total epochs to run, should > 3'
 #批次大小，默认为32
-parser.add_argument('--batch-size', default=32, type=int, metavar='N', help='batch size for training') #--batch-size参数，类型为整数，默认值为32，描述信息为'batch size for training'
+parser.add_argument('--batch-size', default=32, type=int, metavar='N', help='batch size for training') #--batch-size参数，类型为整数，默认值为32，描述信息为'batch size for training';metavar='N'是在帮助信息中显示的参数值的名称, 如果在命令行中输入--help，那么会看到类似于--batch-size N这样的信息。
 #优化器，默认为'SGD'
 parser.add_argument('--optimizer', type=str, default='SGD', help='optimizer used for training') #--optimizer参数，类型为字符串，默认值为'SGD'，描述信息为'optimizer used for training'
 #学习率，默认为0.01
